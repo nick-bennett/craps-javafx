@@ -13,6 +13,7 @@
 <VBox
   xmlns="http://javafx.com/javafx"
   xmlns:fx="http://javafx.com/fxml"
+  id="root"
   fx:controller="edu.cnm.deepdive.craps.controller.Controller">
 
   <stylesheets>
@@ -82,7 +83,7 @@
   </MenuBar>
 
   <VBox
-    fx:id="content">
+    id="content">
 
     <ListView
       fx:id="rolls"/>

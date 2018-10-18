@@ -1,7 +1,15 @@
+VBox#root {
+  -fx-padding: 0;
+  -fx-min-width: 300px;
+  -fx-min-height: 400px;
+}
+
+
 #content {
   -fx-padding: 10px;
-  -fx-pref-width: 260px;
-  -fx-alignment: bottom-center;
+  -fx-min-width: 100%;
+  -fx-min-height: 100%;
+  -fx-alignment: center;
   -fx-spacing: 10px;
 }
 
@@ -15,8 +23,8 @@
 }
 
 .list-view {
-  -fx-fill-width: true;
-  -fx-pref-height: 245px;
+  -fx-pref-width: 90%;
+  -fx-fit-to-height: true;
   -fx-border-color: #C0C0C0;
 }
 
@@ -25,13 +33,18 @@
   -fx-background-color: transparent;
 }
 
-.roll {
+Text#tally {
+  -fx-font-size: 10pt;
+}
+
+HBox.roll {
   -fx-spacing: 10px;
-  -fx-padding: 5px 0 5px 50px;
+  -fx-padding: 5px 0 5px 60px;
+  -fx-alignment: center-left;
 }
 
 .roll Text {
-  -fx-font-size: 16px;
+  -fx-font-size: 16pt;
   -fx-font-weight: bold;
 }
 
@@ -42,10 +55,5 @@
 
 .loss {
   -fx-background-color: rgba(255, 0, 0, 0.05);
-  -fx-border-color: #C0C0C0;
-}
-
-.point {
-  -fx-background-color: rgba(0, 0, 0, 0.05);
   -fx-border-color: #C0C0C0;
 }

@@ -15,9 +15,9 @@ public class Main extends Application {
   public static final String RESOURCE_PATH = "res/";
 
   private static final String MAIN_LAYOUT_PATH = RESOURCE_PATH + "main.fxml";
+  private static final String ICON_PATH = RESOURCE_PATH + "icon.png";
   private static final String UI_STRINGS_BUNDLE = RESOURCE_PATH + "ui";
   private static final String WINDOW_TITLE_KEY = "window_title";
-  private static final String ICON_PATH = RESOURCE_PATH + "icon.png";
 
   private ClassLoader classLoader;
   private ResourceBundle bundle;

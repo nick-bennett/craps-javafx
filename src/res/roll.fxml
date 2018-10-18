@@ -15,13 +15,13 @@
   </stylesheets>
 
   <ImageView
-    fitHeight="38"
-    fitWidth="38"
+    fitHeight="57"
+    fitWidth="57"
     fx:id="die0"/>
 
   <ImageView
-    fitHeight="38"
-    fitWidth="38"
+    fitHeight="57"
+    fitWidth="57"
     fx:id="die1"/>
 
   <Text
