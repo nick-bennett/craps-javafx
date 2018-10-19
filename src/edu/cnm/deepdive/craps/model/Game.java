@@ -23,7 +23,7 @@ public class Game {
     losses = 0;
   }
 
-  public void reset() {
+  void reset() {
     state = State.COME_OUT;
     point = 0;
     synchronized (lock) {
@@ -31,7 +31,7 @@ public class Game {
     }
   }
 
-  private State roll() {
+  State roll() {
     int[] dice = {
         1 + rng.nextInt(6),
         1 + rng.nextInt(6)
@@ -59,6 +59,10 @@ public class Game {
       losses++;
     }
     return state;
+  }
+
+  int getPoint() {
+    return point;
   }
 
   public State getState() {
@@ -107,8 +111,9 @@ public class Game {
   public enum State {
 
     COME_OUT {
+
       @Override
-      public State roll(int total, int point) {
+      public State roll(int total) {
         switch (total) {
           case 2:
           case 3:
@@ -121,10 +126,22 @@ public class Game {
             return POINT;
         }
       }
+
+      @Override
+      public State roll(int total, int ignoredPoint) {
+        return roll(total);
+      }
+
     },
     WIN,
     LOSS,
     POINT {
+
+      @Override
+      public State roll(int total) {
+        throw new IllegalStateException(NO_POINT_PROVIDED);
+      }
+
       @Override
       public State roll(int total, int point) {
         if (total == point) {
@@ -135,7 +152,15 @@ public class Game {
           return POINT;
         }
       }
+
     };
+
+    private static final String NO_POINT_PROVIDED =
+        "Outcome of roll depends on established point, which was not provided";
+
+    public State roll(int total) {
+      return this;
+    }
 
     public State roll(int total, int point) {
       return this;
